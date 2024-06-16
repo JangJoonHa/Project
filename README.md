@@ -79,4 +79,44 @@ def find_shortest_route(building_names):
             min_distance = current_distance
             best_route = perm
 브루트 포스 알고리즘을 이용하여 각각의 total distance를 구한 뒤, 각 current distance를 지정하고 알고리즘이 계속 돌아가면서 current distance가 min distance보다 작으면 계속 min distance가 바뀌면서 알고리즘이 n!만큼 돌아갔을 때, 가장 작은 min distance가 best route가 된다.
+
+이후 건물들을 입력해서 각각의 최소 거리를 구하는데, 건물들의 목록을 나타내어 어떠한 건물들을 입력할 수 있는지 나타내기 위해
+    # List of available buildings
+available_buildings = list(buildings.keys())
+print("Available buildings for selection:")
+for building in available_buildings:
+    print(building)
+을 이용하여 어떠한 건물들을 입력할 수 있는지 알 수 있다.
+
+마지막으로, 검색을 하였을 때, 건물을 잘못 입력 했을 때와 제대로 입력 했을 때의 결과를 나타내기 위한 코드를 만들어냈다.
+
+while True:
+    # User input for buildings
+    building_names = input("Enter the names of the buildings, separated by commas: ").split(", ")
+
+    # Check if all entered buildings are valid
+    invalid_buildings = [name for name in building_names if name not in buildings]
+    if invalid_buildings:
+        print(f"The following building(s) are not valid: {', '.join(invalid_buildings)}")
+        print("Please enter the correct building names from the available list.")
+    else:
+        break
+
+    # Find the shortest route
+shortest_route, shortest_distance = find_shortest_route(building_names)
+
+    # Output the result
+print("The shortest route to visit all buildings is:")
+for i, building in enumerate(shortest_route):
+    if i == len(shortest_route) - 1:
+        print(f"{building}")
+    else:
+        print(f"{building} -> ", end="")
+print(f"Total distance: {shortest_distance:.2f} km")
+
+을 이용하였고, 위의 코드에서 확인을 할 수 있다시피 올바르지 않은 코드에 대해서 Please enter the correct building names from the available list.의 결과가 나오고
+올바른 코드에 대해서는
+building1 -> building2 ->...
+Total distance : [  ]km
+로 나타낼 수 있다.
 # Performance
