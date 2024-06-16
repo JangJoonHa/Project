@@ -44,7 +44,7 @@ d=2rarcsin(sqrt(hav(θ))
     'Stimson Hall': (37.5663, 126.9360),
     'Nursing Building': (37.5665, 126.9370)
     }
-처음에는 각 건물 간의 위치를 경도와 위도를 이용하여 나타내어 건물의 정보를 입력한다.
+처음에는 각 건물 간의 위치를 경도와 위도를 이용하여 나타내어 건물의 정보를 buildings를 이용하 입력한다.
 
  # Step 2: Function to calculate the distance between two coordinates (Haversine formula)
     def haversine(coord1, coord2):
@@ -58,7 +58,7 @@ d=2rarcsin(sqrt(hav(θ))
     a = math.sin(delta_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2) ** 2
     distance = 2 * R * math.asin(math.sqrt(a))  # in kilometers
     return distance
-각 건물 간의 거리를 구하기 위해 하버사인 공식과 지구의 반지름을 이용하여 각 건물 간 거리의 알고리즘을 구하였다.
+각 건물 간의 거리를 구하기 위해 하버사인 공식과 지구의 반지름을 이용하여 각 건물 간 거리의 알고리즘을 구하였다. 데이터 수집에서 구한 하버사인 공식을 이용해서 각각의 위도와 경도를 lat, lon으로 설정하여 하버사인 공식에 대입할 수 있게끔 유도한다.
 
 # Step 3: Function to calculate the total distance of a given route
     def total_distance(route):
