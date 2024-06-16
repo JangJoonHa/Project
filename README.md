@@ -20,7 +20,7 @@ R = 6371  # Radius of the Earth in km
 - 하버사인 공식 (Haversine Formula)
 hav(θ)=hav(φ2−φ1)+cos(φ1)cos(φ2)hav(λ2−λ1)
 hav(θ)=sin^2(θ/2)=;{1−cos(θ)}/2
-hav(​θ)=2rarcsin(sqrt
+d=2rarcsin(sqrt(hav(θ))
 
 # Model
 # Performance
