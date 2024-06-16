@@ -68,11 +68,10 @@ def total_distance(route):
 다양한 방법으로 각 건물 간 사이의 거리의 합을 구할 수 있는데, 이때 내가 만들어낸 알고리즘에서 건물 수가 적기 때문에 브루트 포스 알고리즘을 활용하였다. 이를 이용하여 건물을 n개 지정했을 때, n!의 경우의 수의 총 거리의 합을 구한다.
 
 # Step 4: Function to solve the Traveling Salesman Problem
-def find_shortest_route(building_names):
+  def find_shortest_route(building_names):
     coords = [buildings[name] for name in building_names]
     min_distance = float('inf')
     best_route = None
-
     for perm in itertools.permutations(coords):
         current_distance = total_distance(perm)
         if current_distance < min_distance:
